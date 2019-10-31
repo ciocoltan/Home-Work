@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let x = 6;
+        let y = 15;
+        let z = 4;
+        document.write("x = " + x + "; y = " + y + "; z = " + z + "<br><br>");
+        z += y - x++;
+        document.write("x += y - x++ * z ; = " + x + " <br>");
+        z = --x - y * 5;
+        document.write("-- x - y * 5 = " + z + "<br>");
+        y /= x + 5 % z;
+        document.write("y/x + 5 % z = " + y + "<br>");
+        z = x++ + y * 5;
+        document.write("x+1 + y * 5 = " + z + "<br>");
+        x = y - x++ * z;
+        document.write("y - x+1 * z = " + x + "<br>");
+
+        let r, h, V, S;
+        r = parseFloat(prompt("Введите радиус цилиндра"));
+        h = parseFloat(prompt("Введите высоту цилиндра"));
+
+        V = Math.PI * (r * r) * h;
+        S = 2 * Math.PI * r * (r + h);
+        document.write("Объем цилиндра = " + V + "<br>");
+        document.write("Площадь цилиндра = " + S);
+    </script>
+</body>
+
+</html>

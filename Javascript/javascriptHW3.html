@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Требуется: создать массив размерностью N элементов, заполнить его произвольными целыми значениями.</p>
+    <p id="array"></p>
+    <p>Вывести наибольшее значение массива, наименьшее значение массива</p>
+    <p id="max"></p>
+    <p>наименьшее значение массива</p>
+    <p id="min"></p>
+    <p>общую сумму элементов</p>
+    <p id="sum"></p>
+    <p>среднее арифметическое всех элементов</p>
+    <p id="average"></p>
+    <p>вывести все нечетные значения</p>
+    <p id="impare"></p>
+    <p>создать двумерный массив элементов размерностью 5х5 и заполнить его произвольными целочисленными значениями. По
+        главной диагонали все числа со знаком (-) заменить на 0, а числа со знаком (+) на число 1.</p>
+    <p id="matrix"></p>
+
+    <script>
+        //     Задание 2
+        // Требуется: создать массив размерностью N элементов, заполнить его произвольными целыми
+        // значениями. Вывести наибольшее значение массива, наименьшее значение массива, общую сумму
+        // элементов, среднее арифметическое всех элементов, вывести все нечетные значения.
+
+        let n = parseInt(prompt("Ведите количество елементов масива", 10));
+        // let n = 10;
+        let arr = Array(n);
+        for (let i = 0; i < n; i++) {
+            arr[i] = Math.round(getRandom(-90, 90));
+        }
+
+        function getRandom(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        document.getElementById("array").innerHTML = arr;
+        // console.log(arr);
+        //Вывести наибольшее значение массива
+        let max = arr.sort((a, b) => b - a);
+        document.getElementById("max").innerHTML = arr;
+        // console.log(max);
+        //наименьшее значение массива
+        let min = arr.sort((a, b) => a - b);
+        // console.log(min);
+        document.getElementById("min").innerHTML = arr;
+        //общую сумму элементов
+        let sum = arr.reduce((sum, index) => sum + index, 0);
+        // console.log(sum);
+        document.getElementById("sum").innerHTML = sum;
+        //среднее арифметическое всех элементов
+        let average = sum / arr.length;
+        // console.log(average);
+        document.getElementById("average").innerHTML = average;
+
+        //вывести все нечетные значения+
+
+        let impare = Array();
+        let i = 0;
+        arr.forEach((item, index, arr) => {
+            if (arr[index] % 2 == 1 || arr[index] % 2 == -1) {
+                impare[i] = arr[index];
+                i++;
+            }
+        })
+        // console.log(impare);
+        document.getElementById("impare").innerHTML = impare;
+
+        // for (let index = 0; index < arr.length; index++) {
+        //     if (arr[index] % 2 == 1 || arr[index] % 2 == -1) {
+        //         impare[i] = arr[index];
+        //         i++;
+        //     }
+        // }
+        // console.log(impare);
+
+        //         Задание 3
+        // Требуется: создать двумерный массив элементов размерностью 5х5 и заполнить его произвольными
+        // целочисленными значениями. По главной диагонали все числа со знаком (-) заменить на 0, а числа со
+        // знаком (+) на число 1.
+        let col = 5,
+            row = 5;
+        let matrix = Array(row);
+        for (let i = 0; i < matrix.length; i++) {
+            matrix[i] = Array(col);
+            for (let j = 0; j < matrix[i].length; j++) {
+                matrix[i][j] = Math.round(getRandom(-90, 90));
+                // По главной диагонали все числа со знаком (-) заменить на 0, а числа со знаком (+) на число 1
+                if (matrix[0][j] > 0) {
+                    matrix[0][j] = 1;
+                } else {
+                    matrix[0][j] = 0;
+                }
+            }
+        }
+        console.log(matrix);
+        document.getElementById("matrix").innerHTML = matrix.join('<br>');
+    </script>
+
+</body>
+
+</html>
