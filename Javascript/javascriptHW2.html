@@ -2,76 +2,130 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Javascript Home Work 2</title>
-    <style>
-        * {
-            font-size: 19px;
-        }
-    </style>
-    <script>
-        // let a,
-        //     b,
-        //     sum = 0,
-        //     counter;
-        // a = parseInt(prompt("Ведите число"));
-        // b = parseInt(prompt("Ведите второе число, должно быть больше: " + a, a + 1));
-        // let a1 = a;
-        // while (a >= b) {
-        //     alert("Второе число должно быть больше первой ");
-        //     b = parseInt(prompt("Ведите второе число, должно быть больше: " + a, a + 1));
-        // }
-        // counter = b - a;
-        // document.write("Число нечетные в премужутке от " + a1 + " до " + b + " = ");
-        // for (let index = 0; index <= counter; index++) {
-        //     sum += a;
-        //     if (a % 2 == 1) {
-        //         b == a ? document.writeln(a) : document.writeln(a + " ,"); // чтобы не писать "," на последный елемент
-        //     }
-        //     a++;
-        // }
-        // document.writeln("<br>Сума числовом в премужутке от " + a1 + " до " + b + " = " + sum + "<br>");
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Javascript Home Work 2</title>
+  <script>
+    //         Задание 2
+    // Дано два числа A и B где (A<B).
+    // Выведите на экран суму всех чисел, расположенных в числовом промежутке от А до В.
+    // Выведите на экран все нечетные значения, расположенные в числовом промежутке от А до В.
+    let a,
+      b,
+      sum = 0,
+      counter;
+    // Дано два числа A и B где (A<B).
+    a = parseInt(prompt("Ведите число"));
+    b = parseInt(
+      prompt("Ведите второе число, должно быть больше: " + a, a + 1)
+    );
+    let a1 = a;
+    while (a >= b) {
+      alert("Второе число должно быть больше первой ");
+      b = parseInt(
+        prompt("Ведите второе число, должно быть больше: " + a, a + 1)
+      );
+    }
+    counter = b - a;
+    document.write(
+      "Число нечетные в премужутке от " + a1 + " до " + b + " = "
+    );
+    // Выведите на экран суму всех чисел, расположенных в числовом промежутке от А до В.
+    for (let index = 0; index <= counter; index++) {
+      sum += a;
+      if (a % 2 == 1) {
+        b == a ? document.writeln(a) : document.writeln(a + " ,"); // чтобы не писать "," на последный елемент
+      }
+      a++;
+    }
+    document.writeln(
+      "<br>Сума числовом в премужутке от " +
+      a1 +
+      " до " +
+      b +
+      " = " +
+      sum +
+      "<br>"
+    );
 
-        // let factorial = 1;
-        // counter = 0;
-        // counter = parseInt(prompt("Введите число"));
-        // document.write("Количество возможных вариантов доставки: ");
-        // do {
-        //     if (counter == 0) {
-        //         factorial = 1;
-        //         break;
-        //     }
-        //     factorial = factorial * counter;
-        //     counter = counter - 1;
-        // }
-        // while (counter > 0);
-        // document.write(factorial);
+    let factorial = 1;
+    counter = 0;
+    counter = parseInt(prompt("Введите число"));
+    document.write("Количество возможных вариантов доставки: ");
+    do {
+      if (counter == 0) {
+        factorial = 1;
+        break;
+      }
+      factorial = factorial * counter;
+      counter = counter - 1;
+    } while (counter > 0);
+    document.write(factorial + "<br>");
+    //     Задание 4
+    // Используя циклы нарисуйте в браузере с помощью пробелов (&nbsp) и звездочек (*):
+    //  Прямоугольник.
+    //  Прямоугольный треугольник.
+    //  Равносторонний треугольник.
+    //  Ромб.
 
-        let x = 10,
-            y = 10,
-            probel = " ",
-            star = "*",
-            str = "";
-        for (let i = 0; i < y; i++) {
+    //Используя циклы нарисуйте в браузере с помощью пробелов (&nbsp) и звездочек (*):
+    //  Прямоугольник.
+    let x = 4,
+      y = 10;
 
-            if (i == 0 || i == y - 1) {
-                for (let j = 0; j < x; j++) {
-                   // str += star;
-                }
-            } else {
-                str = star;
-                for (let j = 0; j < y - 2; j++) {
-                    str += probel;
-                }
-                str += star;
-            }
-
-            console.log(str);
-        }
-        console.log(str);
-    </script>
+    for (let i = 0; i < x; i++) {
+      document.write("<br/>");
+      for (let j = 0; j < y; j++) {
+        document.write("&nbsp; * &nbsp;");
+      }
+    }
+    //  Прямоугольный треугольник.
+    x = 10;
+    for (let i = 0; i < x; i++) {
+      document.write("<br/>");
+      for (let j = 0; j < i; j++) {
+        document.write("&nbsp * &nbsp");
+      }
+    }
+    document.write("<br/><br/>");
+    //Равносторонний треугольник.
+    x = 10;
+    y = 0;
+    for (let i = 0; i < x; i++) {
+      for (let r = 0; r < (2 * x / 2 - i); r++) {
+        document.write(" &nbsp ");
+      }
+      for (let j = 0; j < y; j++) {
+        document.write("&nbsp * ");
+      }
+      y++;
+      document.write("<br/>");
+    }
+    //Ромб.
+    x = 7;
+    y = 0;
+    for (let i = 0; i < x; i++) {
+      for (let r = 0; r < (2 * x / 2 - i); r++) {
+        document.write(" &nbsp&nbsp");
+      }
+      for (let j = 0; j < y; j++) {
+        document.write(" &nbsp * ");
+      }
+      y++;
+      document.write("<br/>");
+    }
+    for (let i = 0; i < x; i++) {
+      for (let r = 0; r < (2 / x * 2 + i); r++) {
+        document.write(" &nbsp");
+      }
+      for (let j = 0; j < y; j++) {
+        document.write("&nbsp * ");
+      }
+      y--;
+      document.write("<br/>");
+    }
+  </script>
 </head>
 
 <body></body>
