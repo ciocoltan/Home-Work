@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style/style.css">
+
+    <title>Home Work 4</title>
+</head>
+
+<body>
+    <script>
+        function number(value) {
+            document.calculator.display.value += value;
+        }
+
+        function clearAll(value) {
+            document.calculator.display.value = "";
+        }
+
+        function result() {
+            document.calculator.display.value = eval(document.calculator.display.value);
+        }
+    </script>
+
+    <form name="calculator">
+        <table class="calculator">
+            <tr>
+                <td colspan="4" class="calc_td_result">
+                    <input type="text" name="display" value="" id="calc_result" disabled class="calc_result" />
+                </td>
+            </tr>
+            <tr>
+                <td class="calc_td_btn">
+                    <input type="button" class="calc_btn" value="C" onclick="clearAll(value)" />
+                </td>
+                <td class="calc_td_btn">
+                    <input type="button" class="calc_btn" value="Del" onclick="clearAll(value)" />
+                </td>
+                <td class="calc_td_btn">
+                    <input type="button" class="calc_btn" value="%" onclick="number(value)" />
+                </td>
+                <td class="calc_td_btn">
+                    <input type="button" class="calc_btn" value="+" onclick="number(value)" />
+                </td>
+            </tr>
+            <tr>
+                <td class="calc_td_btn">
+                    <input type="button" class="calc_btn" value="7" onclick="number(value)" />
+                </td>
+                <td class="calc_td_btn">
+                    <input type="button" class="calc_btn" value="8" onclick="number(value)" />
+                </td>
+                <td class="calc_td_btn">
+                    <input type="button" class="calc_btn" value="9" onclick="number(value)" />
+                </td>
+                <td class="calc_td_btn">
+                    <input type="button" class="calc_btn" value="-" onclick="number(value)" />
+                </td>
+            </tr>
+            <tr>
+                <td class="calc_td_btn">
+                    <input type="button" class="calc_btn" value="4" onclick="number(value)" />
+                </td>
+                <td class="calc_td_btn">
+                    <input type="button" class="calc_btn" value="5" onclick="number(value)" />
+                </td>
+                <td class="calc_td_btn">
+                    <input type="button" class="calc_btn" value="6" onclick="number(value)" />
+                </td>
+                <td class="calc_td_btn">
+                    <input type="button" class="calc_btn" value="*" onclick="number(value)" />
+                </td>
+            </tr>
+            <tr>
+                <td class="calc_td_btn">
+                    <input type="button" class="calc_btn" value="1" onclick="number(value)" />
+                </td>
+                <td class="calc_td_btn">
+                    <input type="button" class="calc_btn" value="2" onclick="number(value)" />
+                </td>
+                <td class="calc_td_btn">
+                    <input type="button" class="calc_btn" value="3" onclick="number(value)" />
+                </td>
+                <td class="calc_td_btn">
+                    <input type="button" class="calc_btn" value="/" onclick="number(value)" />
+                </td>
+            </tr>
+            <tr>
+                <td class="calc_td_btn">
+                    <input type="button" class="calc_btn" value="0" onclick="number(value)" />
+                </td>
+                <td class="calc_td_btn">
+                    <input type="button" class="calc_btn" value="+" onclick="number(value)" />
+                </td>
+                <td class="calc_td_btn">
+                    <input type="button" class="calc_btn" value="," onclick="number(value)" />
+                </td>
+                <td class="calc_td_btn">
+                    <input type="button" class="calc_btn" value="=" onclick="result()" />
+                </td>
+            </tr>
+        </table>
+    </form>
+
+
+
+</body>
+
+</html>
