@@ -11,7 +11,7 @@
 <body>
     <p>Требуется: создать массив размерностью N элементов, заполнить его произвольными целыми значениями.</p>
     <p id="array"></p>
-    <p>Вывести наибольшее значение массива, наименьшее значение массива</p>
+    <p>Вывести наибольшее значение массива,</p>
     <p id="max"></p>
     <p>наименьшее значение массива</p>
     <p id="min"></p>
@@ -21,37 +21,37 @@
     <p id="average"></p>
     <p>вывести все нечетные значения</p>
     <p id="impare"></p>
-    <p>создать двумерный массив элементов размерностью 5х5 и заполнить его произвольными целочисленными значениями. По
-        главной диагонали все числа со знаком (-) заменить на 0, а числа со знаком (+) на число 1.</p>
+    <p>создать двумерный массив элементов размерностью 5х5 и заполнить его произвольными целочисленными значениями.</p>
     <p id="matrix"></p>
-
+    <p> По главной диагонали все числа со знаком (-) заменить на 0, а числа со знаком (+) на число 1.</p>
+    <p id="matrix_rezult"></p>
     <script>
         //     Задание 2
         // Требуется: создать массив размерностью N элементов, заполнить его произвольными целыми
         // значениями. Вывести наибольшее значение массива, наименьшее значение массива, общую сумму
         // элементов, среднее арифметическое всех элементов, вывести все нечетные значения.
 
-        let n = parseInt(prompt("Ведите количество елементов масива", 10));
-        // let n = 10;
+        //let n = parseInt(prompt("Ведите количество елементов масива", 10));
+        let n = 10;
         let arr = Array(n);
         for (let i = 0; i < n; i++) {
             arr[i] = getRandom(-90, 90);
         }
 
         function getRandom(min, max) {
-            return Math.randomInteger() * (max - min) + min;
+            return Math.floor(Math.random() * (max - min) + min);
         }
 
         document.getElementById("array").innerHTML = arr;
         // console.log(arr);
         //Вывести наибольшее значение массива
         let max = arr.sort((a, b) => b - a);
-        document.getElementById("max").innerHTML = arr;
+        document.getElementById("max").innerHTML = arr[0];
         // console.log(max);
         //наименьшее значение массива
         let min = arr.sort((a, b) => a - b);
         // console.log(min);
-        document.getElementById("min").innerHTML = arr;
+        document.getElementById("min").innerHTML = arr[0];
         //общую сумму элементов
         let sum = arr.reduce((sum, index) => sum + index, 0);
         // console.log(sum);
@@ -93,16 +93,25 @@
             matrix[i] = Array(col);
             for (let j = 0; j < matrix[i].length; j++) {
                 matrix[i][j] = Math.round(getRandom(-90, 90));
+            }
+        }
+        //console.log(matrix);
+        document.getElementById("matrix").innerHTML = matrix.join('<br>');
+
+        for (let i = 0; i < matrix.length; i++) {
+            for (let j = 0; j < matrix[i].length; j++) {
                 // По главной диагонали все числа со знаком (-) заменить на 0, а числа со знаком (+) на число 1
-                if (matrix[0][j] > 0) {
-                    matrix[0][j] = 1;
-                } else {
-                    matrix[0][j] = 0;
+                document.getElementById("matrix").innerHTML = matrix.join('<br>');
+                if (i == j) {
+                    if (matrix[i][j] > 0) {
+                        matrix[i][j] = 1;
+                    } else {
+                        matrix[i][j] = 0;
+                    }
                 }
             }
         }
-        console.log(matrix);
-        document.getElementById("matrix").innerHTML = matrix.join('<br>');
+        document.getElementById("matrix_rezult").innerHTML = matrix.join('<br>');
     </script>
 
 </body>
