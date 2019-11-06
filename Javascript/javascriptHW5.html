@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //         Дополнительное задание
+        // Создать объект «Менеджер» с помощью блока инициализации, задать свойства «Имя, Фамилия, возраст …».
+        let manager = {
+            name: "Ion",
+            surname: "Coifu",
+            age: "22"
+        }
+        // Создать объект «Секретарь» с помощью конструктора, задать свойства «Имя, Фамилия, возраст …».
+        let secretary = new Object();
+        secretary.name = "Ion";
+        secretary.surname = "Coifu";
+        secretary.age = "22";
+        console.log(manager, secretary);
+        //Задание 1.
+        // Создать объект «Документ», в котором определить свойства «Заголовок, Тело, Футер, Дата». 
+        // Создать в объекте вложенный объект – «Приложение». 
+        // Создать в объекте «Приложение», вложенные объекты, «Заголовок, Тело, Футер, Дата». 
+        // Создать методы для заполнения и отображения документа.
+
+        // Создать объект «Документ», в котором определить свойства «Заголовок, Тело, Футер, Дата».
+        let document1 = {
+            header1: "<header style='width:100%; height:100px; background-color:red;'></header>",
+            body1: "<body style='width:400px; height:100px; background-color:blue;'></body>",
+            footer1: "<footer></footer>",
+            data1: "<section></section>"
+        }
+        // Создать в объекте вложенный объект – «Приложение».
+        document1.application = {};
+        //вложенные объекты, «Заголовок, Тело, Футер, Дата».
+        document1.application.header = {};
+        document1.application.body = {};
+        document1.application.footer = {};
+        document1.application.data = {};
+        // Создать методы для заполнения и отображения документа.
+
+        console.log(document1);
+        for (let key in document1) {
+            document.write(document1[key]);
+        }
+    </script>
+</body>
+
+</html>
