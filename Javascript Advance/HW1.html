@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        task(1);
+        //     Задание 1
+        // Создайте функцию конструктор, которая создает объект со свойством экземпляра, свойством функции-
+        // конструктора, с методом экземпляра и методом функции-конструктора. Имена выберите произвольно.
+        function User(login, password) {
+            // свойства экземпляра
+            this.login = login;
+            this.password = password;
+            // метод экземпляра
+            this.print = function () {
+                document.write(`User: ${this.login} <br> password: ${this.password} <br>`);
+            }
+        }
+        // свойство функции конструктора.
+        User.age = 35;
+        // Метод функции-конструктора
+        User.address = function () {
+            let address = "Moskow, Lefkipou 11 <br>";
+            return address;
+        }
+        // создание экземпляров и работа с свойствами и методами экземпляров.
+        let user1 = new User("Valery", "test123");
+        let user2 = new User("Alex", "test456");
+        user1.password = "Valery2019";
+        user2.login = "Antonis";
+        user1.print();
+        document.write(` Age: ${User.age}<br> Address: ${User.address()}`);
+        user2.print();
+        document.write(` Age: ${User.age} <br>`);
+
+        function task(index) {
+            document.write(`<br>Задание ${index} <br>`);
+        }
+        task(2);
+        //         Задание 2
+        // Разработайте функцию-конструктор, которая будет создавать объект Human (человек). Создайте массив
+        // объектов и реализуйте функцию, которая будет сортировать элементы массива по значению свойства Age
+        // по возрастанию или по убыванию.
+        function Human(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+        let array = [];
+        Human.print = function () {
+            for (index in array) {
+                document.write(`${array[index].name}: ${array[index].age}<br>`);
+            }
+        }
+        for (let index = 0; index < 10; index++) {
+            array[index] = new Human("petru" + (index + 1), getRandom(-50, 50));
+        }
+        document.write(`массив объектов: <br>`);
+        Human.print();
+        //реализуйте функцию, которая будет сортировать элементы массива по значению свойства Age
+        // по возрастанию или по убыванию.
+        let sortArray = array.sort((a, b) => {
+            return b.age - a.age
+        });
+        document.write(`массив сортирован: <br>`);
+        Human.print();
+        task(3);
+        // Задание 3
+        // Разработайте функцию - конструктор, которая будет создавать объект Human(человек),
+        //     добавьте на свое усмотрение свойства и методы в этот объект.Подумайте,
+        //     какие методы и свойства следует сделать уровня экземпляра, а какие уровня функции - конструктора.
+        function Human2(name, age) {
+            this.name = name;
+            this.age = age;
+            this.print = function () {
+                document.write(`Name: ${this.name} <br> Age: ${this.age}<br>`);
+            }
+        }
+
+        let firstPerson = new Human2("Vasile", 15);
+        let secondPerson = new Human2("Grigore", 35);
+        firstPerson.print();
+        Human2.check = function (person) {
+            if (person.age >= 18) {
+                document.write(`${person.name} is adult <br>`);
+            } else {
+                document.write(`${person.name} is minor <br>`);
+            }
+        }
+        Human2.check(secondPerson);
+        console.log(Human2.contry);
+
+        task(4);
+        //Создайте пример демонстрирующий назначение метода toString().
+        User.prototype.toString = function () {
+            return `User: ${this.login} <br> Password: ${this.password} <br> Age: ${User.age}<br> Address: ${User.address()}`
+        }
+        document.write(user1.toString());
+        document.write("<br>" + user2);
+
+        task(5);
+        // Создайте функцию-конструктор Box (коробка) для создания объекта со свойствами Height (высота), Width
+        // (ширина), Depth (глубина) и Material (материал). Также, в объекте должны быть методы Volume – для
+        // получения объема и equals() – для сравнения объектов, объекты должны считаться равными, если
+        // содержат одинаковые значения в свойстве Material.
+        function Box(h, w, d, m) {
+            this.height = h;
+            this.width = w;
+            this.depth = d;
+            this.material = m;
+            this.volume = function (obj2) {
+                return this.height * this.width / this.depth;
+            }
+        }
+        Box.prototype.equals = function (obj2) {
+            return this.material === obj2.material;
+        }
+        let box1 = new Box(15, 10, 5, 1);
+        let box2 = new Box(150, 100, 50, 1);
+        document.write(`Volume1: ${box1.volume()} <br>`);
+        document.write(`Volume2: ${box2.volume()} <br>`);
+        if (box1.equals(box2)) {
+            document.write(`Box 1 считаться равным c Box 2`)
+        } else {
+            document.write(`Box 1 считаться НЕ равным c Box 2`)
+        }
+    </script>
+</body>
+
+</html>
