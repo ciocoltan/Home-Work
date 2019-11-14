@@ -59,8 +59,8 @@
             p.innerHTML = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, corrupti?.";
             div.appendChild(p);
             let numParagraph = document.getElementsByTagName("p");
-
-            if (numParagraph.length > 14) {
+            console.log(div.children.length)
+            if (div.children.length > 10) {
                 while (div.hasChildNodes()) {
                     div.removeChild(div.firstChild);
                 }
