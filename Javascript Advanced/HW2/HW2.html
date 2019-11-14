@@ -34,7 +34,6 @@
 произвольным текстом. После создания 10 параграфов все они должны быть удалены. -->
     <p id="test">test</p>
     <input type="button" id="btn-paragraph" value="Создать параграф" />
-
     <div id="paragraph">
     </div>
     <p class="line">Далеко-далеко за словесными горами в стране.</p>
@@ -59,12 +58,10 @@
             p.innerHTML = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, corrupti?.";
             div.appendChild(p);
             let numParagraph = document.getElementsByTagName("p");
-            console.log(div.children.length)
             if (div.children.length > 10) {
                 while (div.hasChildNodes()) {
                     div.removeChild(div.firstChild);
                 }
-
             }
         };
         //Задание 3
@@ -82,5 +79,4 @@
     </script>
     <script src="./js/script.js"></script>
 </body>
-
 </html>
