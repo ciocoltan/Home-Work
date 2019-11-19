@@ -1,0 +1,18 @@
+.red {
+    border-color: red;
+    border-style: solid;
+    outline: none;
+}
+
+.green {
+    border-color: green;
+    border-style: solid;
+    outline: none;
+}
+
+.animation {
+    height: 30px;
+    width: 30px;
+    background-color: Green;
+    position: relative;
+}
