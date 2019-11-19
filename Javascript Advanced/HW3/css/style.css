@@ -1,0 +1,39 @@
+#sec::after {
+    content: ":";
+}
+
+#min::after {
+    content: ":";
+}
+
+#hour::after {
+    content: ":";
+}
+
+#clock {
+    display: flex;
+}
+
+#clock>span {
+    width: 24px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.buttons {
+    width: 200px;
+}
+
+.print {
+    animation: animRtl 5s linear;
+}
+
+@keyframes animRtl {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
