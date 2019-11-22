@@ -1,0 +1,30 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 500px;
+}
+
+label {
+    display: flex;
+    width: 150px;
+    margin: 2px;
+}
+
+input {
+    width: 150px;
+}
+
+input[type=submit] {
+    margin: 15px;
+    width: 80px;
+    border-radius: 5px;
+}
+
+.info {
+    box-shadow: 1px 1px 3px rgb(212, 212, 212);
+    background-color: whitesmoke;
+    border: 1px solid red;
+    padding: 2px;
+    font: 12px bold sans-serif;
+}
