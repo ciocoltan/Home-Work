@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+    <script src="./js/script.js"></script>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Pizza Mia</legend>
+        <form action="#" method="post" class="form_pizza" name="pizza" id="form_pizza">
+            <div>
+                <input type="radio" name="pizza_size" id="pizzasmall"> Пица маленькая
+                <input type="radio" name="pizza_size" id="pizzamedium">Пица средняя
+                <input type="radio" name="pizza_size" id="pizzalarge">Пица большая
+            </div>
+            <div class="pizza">
+                <div class="img_pizza">
+                    <img src="./img/pizza.jpg" alt="pizza">
+                </div>
+                <div class="ingredients">
+                    <div class="ingredients_box">
+                        <p>ингредиенты к пицце</p>
+                        <div>
+                            <input type="checkbox" name="mushrooms" id="mushrooms">грибы
+                        </div>
+                        <div>
+                            <input type="checkbox" name="bacon" id="bacon">бекон
+                        </div>
+                        <div>
+                            <input type="checkbox" name="tomatoes" id="tomatoes">помидоры
+                        </div>
+                        <div>
+                            <input type="checkbox" name="cheese" id="cheese">сыр
+                        </div>
+                        <div>
+                            <input type="checkbox" name="olives" id="olives">оливки
+                        </div>
+                    </div>
+                    <div class="price">
+                        <p>2 $</p>
+                        <p>4 $</p>
+                        <p>1.5 $</p>
+                        <p>3 $</p>
+                        <p>0.5 $</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>информация о покупателе</h3>
+            <div id="costomer_info" class="costomer_info">
+
+                <div>
+                    <label for="firstname">Имя</label>
+                    <label for="tel">Телефон</label>
+                    <label for="address">Адрес доставки</label>
+                </div>
+                <div>
+                    <input type="text" name="firstname" id="firstname">
+                    <input type="text" name="tel" id="tel">
+                    <input type="text" name="address" id="address">
+                </div>
+            </div>
+            <div class="box">
+                <div>
+                    <input type="submit" name="submit" value="Заказать">
+                </div>
+                <div>
+                    <h2 id="sale_box" class="sale_box"> 15</h2>
+                </div>
+            </div>
+        </form>
+    </fieldset>
+
+
+
+</body>
+
+</html>

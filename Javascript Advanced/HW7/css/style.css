@@ -1,0 +1,77 @@
+.pizza {
+    display: flex;
+}
+
+.img_pizza {
+
+    margin: 40px 20px;
+}
+
+.ingredients {
+    display: flex;
+    padding: 20px;
+}
+
+.ingredients>div {
+    margin: 3px;
+}
+
+.costomer_info {
+    display: flex;
+}
+
+.costomer_info>div {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.costomer_info>div>label,
+.costomer_info>div>input {
+    margin: 2px;
+}
+
+.price {
+    padding-top: 50px;
+}
+
+.price>p {
+    margin: 2px;
+}
+
+.box {
+    display: flex;
+}
+
+.box>div {
+    margin: 5px;
+}
+
+.box>div>h2 {
+    margin: 0;
+    padding-left: 200px;
+}
+
+.info {
+    box-shadow: 1px 1px 3px rgb(212, 212, 212);
+    background-color: whitesmoke;
+    border: 1px solid red;
+    padding: 2px;
+    font: 12px bold sans-serif;
+}
+
+.sale_box::after {
+    content: " $";
+}
+
+.red {
+    border-color: red;
+    border-style: solid;
+    outline: none;
+}
+
+.green {
+    border-color: green;
+    border-style: solid;
+    outline: none;
+}
