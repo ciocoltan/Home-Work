@@ -9,6 +9,7 @@ function init() {
     const form = get(FORM_ID);
     const pizzamedium = get(PIZZAMEDIUM_ID);
     pizzamedium.checked = true;
+    print();
     for (let i = 0; i < form.elements.length; i++) {
         form.elements[i].addEventListener("change", print, false);
     }
@@ -34,7 +35,7 @@ let price = {
 function print() {
     const box = get(SALE_BOX);
     const form = get(FORM_ID);
-    let sum = 0;
+    sum = 0;
     for (let i = 0; i < form.elements.length; i++) {
         if (form.elements[i].checked == true) {
             sum += price[form.elements[i].id];
