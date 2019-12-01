@@ -1,0 +1,27 @@
+#btn {
+    margin: 10px;
+}
+
+.galery {
+    display: flex;
+    width: 440px;
+}
+
+.galery>div {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    overflow: hidden;
+}
+
+.galery>div>img {
+    width: 100px;
+    height: 100px;
+}
+
+.fullImage,
+.fullImage>img {
+    width: 275px;
+    height: 180px;
+    color: #f1c29b;
+}
