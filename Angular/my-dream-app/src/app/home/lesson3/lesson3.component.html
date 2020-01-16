@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Butons</th>
+  </tr>
+  <tr *ngFor="let i of products">
+    <td>{{i.id}}</td>
+    <td>{{i.name}}</td>
+    <td>{{i.price}}</td>
+    <td><button (click)="deleteItem(i.id)">Delete</button></td>
+  </tr>
+</table>
