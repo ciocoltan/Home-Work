@@ -1,12 +1,12 @@
 import { Component, OnInit } from "@angular/core";
-
+import { objectSettings } from "./object-settings";
 @Component({
   selector: "app-lesson3",
   templateUrl: "./lesson3.component.html",
   styleUrls: ["./lesson3.component.scss"]
 })
 export class Lesson3Component implements OnInit {
-  public products: Array<Object> = [
+  public products: objectSettings[] = [
     { id: 1, name: "product 1", price: 100 },
     { id: 2, name: "product 2", price: 200 },
     { id: 3, name: "product 3", price: 300 },

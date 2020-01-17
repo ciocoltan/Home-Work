@@ -1,3 +1,7 @@
 <ul>
-  <li *ngFor="let i of VALUES">{{i}}</li>
+  <li *ngFor="let i of VALUES" (click)="onSelect(i)">{{i.value}}</li>
 </ul>
+
+<div *ngIf="selectedLanguage">
+  Selected Language is: {{selectedLanguage}}
+</div>
