@@ -1,0 +1,19 @@
+<table class="table table-striped">
+  <thead class="thead-light">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Butons</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let i of products">
+      <td>{{i.id}}</td>
+      <td>{{i.name}}</td>
+      <td>{{i.price}}</td>
+      <td><button class="btn btn-danger" (click)="deleteItem(i.id)">Delete</button></td>
+    </tr>
+  </tbody>
+
+</table>
