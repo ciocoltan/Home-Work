@@ -28,8 +28,6 @@ export class ProductsService {
     this.categories = this.countCategories().sort(
       (a: number, b: number) => a - b
     );
-    console.log(this.countCategories().sort((a: number, b: number) => a - b));
-
     return this.categories;
   }
   countCategories() {
