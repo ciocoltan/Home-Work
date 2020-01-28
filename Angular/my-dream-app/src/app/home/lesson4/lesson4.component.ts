@@ -31,8 +31,7 @@ export class Lesson4Component implements OnInit {
 
   ngOnInit() {
     this.categories = this.countCategories().sort(
-      (a: number, b: number) => a - b
-    );
+      (a: number, b: number) => a - b);
   }
 
   deleteItem(item: number) {

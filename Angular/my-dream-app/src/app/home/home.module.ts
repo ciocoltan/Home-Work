@@ -7,6 +7,7 @@ import { MyTableComponent } from "./lesson3/my-table/my-table.component";
 import { HomeRoutingModule } from "./home-routing.module";
 import { Lesson4Component } from "./lesson4/lesson4.component";
 import { FormsModule } from "@angular/forms"; // ngModel
+import { Lesson5servicesComponent } from "./lesson5services/lesson5services.component";
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { FormsModule } from "@angular/forms"; // ngModel
     Lesson2Component,
     Lesson3Component,
     MyTableComponent,
-    Lesson4Component
+    Lesson4Component,
+    Lesson5servicesComponent
   ],
   imports: [CommonModule, HomeRoutingModule, FormsModule]
 })
