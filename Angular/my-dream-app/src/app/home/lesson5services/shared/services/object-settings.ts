@@ -3,4 +3,5 @@ export class objectSettings {
   name: string;
   price: number;
   category: number;
+  detail?: string;
 }

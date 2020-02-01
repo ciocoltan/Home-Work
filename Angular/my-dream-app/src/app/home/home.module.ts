@@ -8,6 +8,8 @@ import { HomeRoutingModule } from "./home-routing.module";
 import { Lesson4Component } from "./lesson4/lesson4.component";
 import { FormsModule } from "@angular/forms"; // ngModel
 import { Lesson5servicesComponent } from "./lesson5services/lesson5services.component";
+import { Lesson6routingComponent } from "./lesson6routing/lesson6routing.component";
+import { Lesson6routingModule } from "./lesson6routing/lesson6routing.module";
 
 @NgModule({
   declarations: [
@@ -16,8 +18,10 @@ import { Lesson5servicesComponent } from "./lesson5services/lesson5services.comp
     Lesson3Component,
     MyTableComponent,
     Lesson4Component,
-    Lesson5servicesComponent
+    Lesson5servicesComponent,
+    Lesson6routingComponent
   ],
-  imports: [CommonModule, HomeRoutingModule, FormsModule]
+  imports: [CommonModule, HomeRoutingModule, FormsModule, Lesson6routingModule],
+  providers: []
 })
 export class HomeModule {}
