@@ -1,23 +1,4 @@
 nav {
   display: flex;
-
-  li {
-    margin: 15px 5px;
-    list-style: none;
-    width: 70px;
-
-    a.active {
-      text-decoration: none;
-      transition: all 0.5s;
-      border-radius: 3px;
-      padding: 2px 8px;
-      background-color: #e03237;
-      color: white;
-
-    }
-  }
 }
 
-.container {
-  width: 500px;
-}

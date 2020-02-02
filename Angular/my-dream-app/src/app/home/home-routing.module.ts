@@ -12,6 +12,8 @@ import { ProductdetailsComponent } from "./lesson6routing/productdetails/product
 import { ProductIdService } from "./lesson6routing/shared/product-id.service";
 import { AuthGuardService } from "./lesson6routing/shared/auth-guard.service";
 import { AdminHomeComponent } from "./lesson6routing/admin/admin-home/admin-home.component";
+import { Page404Component } from "./lesson7form/page404/page404.component";
+import { FormComponent } from "./lesson7form/form/form.component";
 
 const routes: Routes = [
   { path: "lesson1", component: Lesson1Component },
@@ -50,7 +52,10 @@ const routes: Routes = [
         ]
       }
     ]
-  }
+  },
+  { path: "lesson7", component: FormComponent },
+  { path: "**", redirectTo: "not-found" },
+  { path: "not-found", component: Page404Component }
 ];
 
 @NgModule({
