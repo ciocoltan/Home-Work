@@ -4,18 +4,13 @@ nav {
 
 .container {
   display: flex;
-  outline: 1px solid;
-
-
 
   nav {
     flex: 1;
-    outline: 1px solid;
   }
 
   .details {
     flex: 3;
-    outline: 1px solid;
 
   }
 }

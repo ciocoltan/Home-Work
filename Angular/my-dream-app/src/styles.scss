@@ -1,13 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
-body {
+* {
   padding: 0;
   margin: 0;
 }
 
 li {
-  margin: 15px 5px;
+  padding: 5px;
   list-style: none;
-  width: 70px;
+  width: 100%;
 
   a.active {
     text-decoration: none;
@@ -18,8 +18,4 @@ li {
     color: white;
 
   }
-}
-
-.container {
-  width: 600px;
 }

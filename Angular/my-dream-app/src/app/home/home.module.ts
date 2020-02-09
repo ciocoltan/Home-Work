@@ -11,6 +11,9 @@ import { Lesson5servicesComponent } from "./lesson5services/lesson5services.comp
 import { Lesson6routingComponent } from "./lesson6routing/lesson6routing.component";
 import { Lesson6routingModule } from "./lesson6routing/lesson6routing.module";
 import { Lesson7formModule } from "./lesson7form/lesson7form.module";
+import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
+import { HttpApiModule } from "./http-api/http-api.module";
+import { JwtInterceptor } from './http-api/apishared/interceptor/httpInterceptor';
 
 @NgModule({
   declarations: [
@@ -25,10 +28,14 @@ import { Lesson7formModule } from "./lesson7form/lesson7form.module";
   imports: [
     CommonModule,
     HomeRoutingModule,
+    HttpClientModule,
     FormsModule,
     Lesson6routingModule,
-    Lesson7formModule
+    Lesson7formModule,
+    HttpApiModule
   ],
-  providers: []
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
+  ]
 })
 export class HomeModule {}
