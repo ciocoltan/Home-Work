@@ -1,4 +1,4 @@
-<div class="containerUser">
+<div class="containerUser" *ngIf="users">
   <div class="containerListUser">
     <table class="table table-striped table-hover">
       <thead class="thead-light">
@@ -17,7 +17,9 @@
       </tbody>
     </table>
   </div>
-  <div class="details" *ngIf="curentUser">
-    <app-apiuserdetail [userDetail]="curentUser"></app-apiuserdetail>
+  <div class="details">
+    <!-- <app-apiuserdetail></app-apiuserdetail> -->
+
+<router-outlet></router-outlet>
   </div>
 </div>

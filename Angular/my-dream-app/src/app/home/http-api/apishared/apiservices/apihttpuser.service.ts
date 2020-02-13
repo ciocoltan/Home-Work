@@ -3,7 +3,6 @@ import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { UsersResponseModel } from "../models/UsersResponse";
 import { SentUserModel } from "../models/SentUserModel";
-
 @Injectable({
   providedIn: "root"
 })
@@ -13,9 +12,11 @@ export class ApihttpuserService {
   constructor(private http: HttpClient) {}
 
   getUsers(): Observable<UsersResponseModel> {
-    return this.http.get<UsersResponseModel>(this.url+"?page=500");
+    return this.http.get<UsersResponseModel>(this.url + "?page=500");
   }
-
+  getUser(id: number): Observable<UsersResponseModel> {
+    return this.http.get<UsersResponseModel>(`/users/${id}`);
+  }
   sendForm(form: SentUserModel) {
     return this.http.post<UsersResponseModel>(this.url, form);
   }

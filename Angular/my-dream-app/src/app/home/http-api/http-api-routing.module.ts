@@ -10,7 +10,7 @@ const routes: Routes = [
     path: "http",
     component: HttpApiHomeComponent,
     children: [
-      {path: "", redirectTo: "users", pathMatch: "full"},
+      { path: "", redirectTo: "users", pathMatch: "full" },
       {
         path: "users",
         component: ApihttpusersComponent,

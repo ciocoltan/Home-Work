@@ -1,7 +1,7 @@
 import { UserModel } from "./UserModel";
 
-export class UsersResponseModel {
-  result: Array<UserModel>;
+export class UsersObjResModel {
+  result: UserModel;
   _meta: {
     success: boolean;
     code: number;

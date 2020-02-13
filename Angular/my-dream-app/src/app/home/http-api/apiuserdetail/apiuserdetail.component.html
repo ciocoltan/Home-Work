@@ -1,12 +1,10 @@
-<form [formGroup]="formAddUser" class="form-control">
-  <div class="form-group">
-    <label for="id">Id</label>
-    <input type="text" name="id" class="form-control" formControlName="id" readonly>
-    <div *ngIf="formError.id" class="alert alert-danger">
-      {{formError.id}}
+<div *ngIf="userDetail">
+  <form [formGroup]="formAddUser" class="form-control">
+    <div class="form-group">
+      <label for="id">Id</label>
+      <input type="text" name="id" class="form-control" formControlName="id" readonly>
     </div>
-  </div>
-  <div class="form-group">
+    <!-- <div class="form-group">
     <label for="first_name">Name</label>
     <input type="text" name="first_name" class="form-control" formControlName="first_name">
     <div *ngIf="formError.first_name" class="alert alert-danger">
@@ -45,8 +43,9 @@
     <div *ngIf="formError.status" class="alert alert-danger">
       {{formError.status}}
     </div>
-  </div>
-  <button class="btn btn-outline-success m-1" (click)="editUser()">Edit</button>
-  <button class="btn btn-outline-success m-1" [disabled]="formAddUser.invalid" (click)="addNewUser()">Add New</button>
-  <button class="btn btn-outline-success m-1" (click)="deleteUser()">Delete</button>
-</form>
+  </div> -->
+    <button class="btn btn-outline-success m-1" (click)="editUser()">Edit</button>
+    <button class="btn btn-outline-success m-1" [disabled]="formAddUser.invalid" (click)="addNewUser()">Add New</button>
+    <button class="btn btn-outline-success m-1" (click)="deleteUser()">Delete</button>
+  </form>
+</div>

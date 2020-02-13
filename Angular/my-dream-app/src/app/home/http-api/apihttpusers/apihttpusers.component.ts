@@ -11,7 +11,7 @@ import { Subscription } from "rxjs";
 })
 export class ApihttpusersComponent implements OnInit, OnDestroy {
   public users: Array<UserModel>;
-  public curentUser: UserModel;
+  // public curentUser: UserModel;
   private unSubscribe: Subscription = new Subscription();
   constructor(
     private _apiUserServices: ApihttpuserService,
@@ -31,11 +31,6 @@ export class ApihttpusersComponent implements OnInit, OnDestroy {
   }
 
   selectIdUser(id: number) {
-    for (let index = 0; index < this.users.length; index++) {
-      if (id == +this.users[index].id) {
-        this.curentUser = this.users[index];
-      }
-    }
     this.router.navigate(["userdetail/", id], {
       relativeTo: this.activatedRoute
     });
