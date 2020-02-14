@@ -12,6 +12,7 @@ const routes: Routes = [
     component: HomeComponent,
     data: { breadcrumb: "Home" },
     children: [
+      { path: "", redirectTo: "users", pathMatch: "full" },
       {
         path: "users?page=:id",
         component: UsersComponent,
@@ -61,21 +62,6 @@ const routes: Routes = [
           }
         ]
       }
-      // {
-      //   path: "users/update",
-      //   component: UpdateComponent,
-      //   data: { breadcrumb: "Update" }
-      // },
-      // {
-      //   path: "users/update/:id",
-      //   component: UpdateComponent,
-      //   data: { breadcrumb: "Update" }
-      // },
-      // {
-      //   path: "users/view/:id",
-      //   component: ViewComponent,
-      //   data: { breadcrumb: "View" }
-      // }
     ]
   }
 ];

@@ -64,13 +64,14 @@ export class UsersComponent implements OnInit, OnDestroy {
           this.controlCode = res;
           if (this.controlCode._meta.code == 204) {
             alert(this.controlCode._meta.message);
-            window.location.reload();
+            this.pagination();
           } else {
             alert(this.controlCode._meta.message);
           }
         })
       );
     }
+
   }
 
   ngOnDestroy() {
