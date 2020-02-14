@@ -1,0 +1,51 @@
+<div *ngIf="userDetail">
+  <form [formGroup]="formAddUser" class="form-control">
+    <div class="form-group">
+      <label for="id">Id</label>
+      <input type="text" name="id" class="form-control" formControlName="id" readonly>
+    </div>
+    <!-- <div class="form-group">
+    <label for="first_name">Name</label>
+    <input type="text" name="first_name" class="form-control" formControlName="first_name">
+    <div *ngIf="formError.first_name" class="alert alert-danger">
+      {{formError.first_name}}
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="last_name">SurName</label>
+    <input type="text" name="last_name" class="form-control" formControlName="last_name">
+    <div *ngIf="formError.last_name" class="alert alert-danger">
+      {{formError.last_name}}
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="sex">Sex</label>
+    <select id="sex" class="form-control" formControlName="gender">
+      <option *ngFor="let sex of genderUser" [selected]="formAddUser.controls.gender.value == sex">{{sex}}</option>
+    </select>
+    <div *ngIf="formError.gender" class="alert alert-danger">
+      {{formError.gender}}
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" name="email" class="form-control" formControlName="email">
+    <div *ngIf="formError.email" class="alert alert-danger">
+      {{formError.email}}
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="status">Status</label>
+    <select id="status" class="form-control" formControlName="status">
+      <option *ngFor="let status of statusUser" [selected]="formAddUser.controls.status.value == status">{{status}}
+      </option>
+    </select>
+    <div *ngIf="formError.status" class="alert alert-danger">
+      {{formError.status}}
+    </div>
+  </div> -->
+    <button class="btn btn-outline-success m-1" (click)="editUser()">Edit</button>
+    <button class="btn btn-outline-success m-1" [disabled]="formAddUser.invalid" (click)="addNewUser()">Add New</button>
+    <button class="btn btn-outline-success m-1" (click)="deleteUser()">Delete</button>
+  </form>
+</div>

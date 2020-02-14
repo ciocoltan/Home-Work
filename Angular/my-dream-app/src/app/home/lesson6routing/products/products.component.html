@@ -1,0 +1,21 @@
+<p>products works!</p>
+
+<table class="table table-striped">
+  <thead class="thead-light">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let i of products">
+      <td>{{i.id}}</td>
+      <td><a routerLink="productDetail/{{i.id}}" routerLinkActive="active" (click)="productInfo(i.id)">{{i.name}}</a>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div>
+  <router-outlet></router-outlet>
+</div>
