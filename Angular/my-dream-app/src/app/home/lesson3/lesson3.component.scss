@@ -1,11 +1,6 @@
-table {
+:host {
+  display: block;
+  margin: 10px;
   padding: 10px;
-  border: 1px solid;
-  border-collapse: collapse;
-
-  td,
-  th {
-    padding: 5px;
-    border: 1px solid;
-  }
+  width: 500px;
 }
