@@ -1,9 +1,9 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import {BreadcrumbModule} from 'angular-crumbs';
+import { BreadcrumbModule } from "angular-crumbs";
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { JwtInterceptor } from "./shared/interceptor/httpInterceptor";
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -12,8 +12,10 @@ import { UsersComponent } from "./users/users.component";
 import { SharedModule } from "./shared/shared.module";
 
 import { JwPaginationComponent } from "jw-angular-pagination";
-import { UpdateComponent } from './update/update.component';
-import { ViewComponent } from './view/view.component';
+import { UpdateComponent } from "./update/update.component";
+import { ViewComponent } from "./view/view.component";
+import { NoopAnimationsModule } from "@angular/platform-browser/animations";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,16 @@ import { ViewComponent } from './view/view.component';
     UpdateComponent,
     ViewComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, SharedModule, HttpClientModule,BreadcrumbModule, ReactiveFormsModule,FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    SharedModule,
+    HttpClientModule,
+    BreadcrumbModule,
+    ReactiveFormsModule,
+    FormsModule,
+    NoopAnimationsModule
+  ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
   ],

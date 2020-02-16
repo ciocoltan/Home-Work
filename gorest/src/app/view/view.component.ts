@@ -51,12 +51,9 @@ export class ViewComponent implements OnInit, OnDestroy {
     }
   }
   goToUpdate(){
-    console.log(this.currentUser.id);
-
     this.router.navigate([`home/users/update/${this.currentUser.id}`]);
   }
   ngOnDestroy() {
     this.unSubscribe.unsubscribe();
-    console.log("unsubscibe");
   }
 }

@@ -4,6 +4,7 @@ import { UserModel } from "../shared/models/UserModel";
 import { Subscription } from "rxjs";
 import { UsersObjResModel } from "../shared/models/UsersObjResModel";
 
+
 @Component({
   selector: "app-users",
   templateUrl: "./users.component.html",
@@ -13,12 +14,10 @@ export class UsersComponent implements OnInit, OnDestroy {
   public items = [];
   public pageOfItems: Array<any>;
   public users: Array<UserModel>;
-  public user: any;
   public totalUsers: number;
   public showing: string;
   public menu: Array<any> = [];
   private unSubscribe: Subscription = new Subscription();
-  public currentUser: UserModel;
   private controlCode: UsersObjResModel;
   constructor(private _apiServices: ApiServicesService) {}
 
@@ -30,7 +29,6 @@ export class UsersComponent implements OnInit, OnDestroy {
     this.unSubscribe.add(
       this._apiServices.getPagesUsers(pageNum).subscribe(res => {
         this.users = res.result;
-        this.totalUsers = res._meta.totalCount;
       })
     );
   }
@@ -51,7 +49,6 @@ export class UsersComponent implements OnInit, OnDestroy {
   }
 
   onChangePage(pageOfItems: Array<any>) {
-    // update current page of items
     this.pageOfItems = pageOfItems;
     this.showUsers(this.pageOfItems[0].name);
     this.showing = this.pageOfItems[0].show;
@@ -64,18 +61,16 @@ export class UsersComponent implements OnInit, OnDestroy {
           this.controlCode = res;
           if (this.controlCode._meta.code == 204) {
             alert(this.controlCode._meta.message);
-            this.pagination();
+            this.showUsers(this.pageOfItems[0].name);
           } else {
             alert(this.controlCode._meta.message);
           }
         })
       );
     }
-
   }
 
   ngOnDestroy() {
     this.unSubscribe.unsubscribe();
-    console.log("unsubscibe");
   }
 }

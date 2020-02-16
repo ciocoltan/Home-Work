@@ -14,7 +14,6 @@ export class ApiServicesService {
   constructor(private http: HttpClient) {}
 
   getPagesUsers(pageNum: string): Observable<UsersResponseModel> {
-    //console.log(pageNum);
     return this.http.get<UsersResponseModel>(pageNum);
   }
   getUsers(): Observable<UsersResponseModel> {

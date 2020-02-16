@@ -74,8 +74,6 @@ export class UpdateComponent implements OnInit, OnDestroy {
           status: [this.users.status, [Validators.required]],
           email: [this.users.email, [Validators.required, Validators.email]],
           website: [this.users.website, [Validators.required]],
-          // avatar: [this.users[0].avatar, [Validators.required]],
-          // about: [this.users[0].about, [Validators.required]],
           address: [this.users.address, [Validators.required]]
         });
         this.unSubscribe.add(
@@ -167,6 +165,5 @@ export class UpdateComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.unSubscribe.unsubscribe();
-    console.log("unsubscibe");
   }
 }
