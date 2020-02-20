@@ -1,12 +1,12 @@
-<p>update works!</p>
+
 <div class="container" *ngIf="users">
-  <h3>{{ h3Text }}</h3>
+<h3>{{ h3Text | translate}} {{fio}}</h3>
 
   <form [formGroup]="formHtmlUpdate">
     <div class="row">
       <div class="col-sm-6">
         <div class="form-group">
-          <label class="control-label" for="first_name">First Name</label>
+          <label class="control-label" for="first_name">{{"view.first_name" | translate}}</label>
           <input
             type="text"
             id="first_name"
@@ -18,7 +18,7 @@
           </div>
         </div>
         <div class="form-group">
-          <label class="control-label" for="last_name">Last Name</label>
+          <label class="control-label" for="last_name">{{"view.last_name" | translate}}</label>
           <input
             type="text"
             id="last_name"
@@ -30,22 +30,17 @@
           </div>
         </div>
         <div class="form-group">
-          <label class="control-label" for="gender">Gender</label>
-          <select
-            id="gender"
-            class="form-control"
-            formControlName="gender"
-            style="height: 34px"
-          >
+          <label class="control-label" for="gender">{{"view.gender" | translate}}</label>
+          <select id="gender" class="form-control" formControlName="gender" style="height: 34px">
             <option
               *ngFor="let sex of genderUser"
               [selected]="formHtmlUpdate.controls.gender.value == sex"
-              >{{ sex }}
+              >{{ sex | translate}}
             </option>
           </select>
         </div>
         <div class="form-group">
-          <label class="control-label" for="dob">Dob</label>
+          <label class="control-label" for="dob">{{"view.dob" | translate}}</label>
           <div class="input-group  date">
             <span class="input-group-addon kv-date-picker" title="Select date"
               ><i class="glyphicon glyphicon-calendar kv-dp-icon"></i
@@ -54,7 +49,7 @@
           </div>
         </div>
         <div class="form-group">
-          <label class="control-label" for="phone">Phone</label>
+          <label class="control-label" for="phone">{{"view.phone" | translate}}</label>
           <input
             type="text"
             id="phone"
@@ -66,7 +61,7 @@
           </div>
         </div>
         <div class="form-group">
-          <label class="control-label" for="status">Status</label>
+          <label class="control-label" for="status">{{"view.status" | translate}}</label>
           <select
             id="status"
             class="form-control"
@@ -77,7 +72,7 @@
               *ngFor="let status of statusUser"
               [selected]="formHtmlUpdate.controls.status.value == status"
             >
-              {{ status }}
+              {{ status | translate}}
             </option>
           </select>
         </div>
@@ -85,7 +80,7 @@
 
       <div class="col-sm-6">
         <div class="form-group ">
-          <label class="control-label" for="email">Email</label>
+          <label class="control-label" for="email">{{"view.email" | translate}}</label>
           <input
             type="email"
             id="email"
@@ -98,7 +93,7 @@
           <p class="help-block help-block-error"></p>
         </div>
         <div class="form-group">
-          <label class="control-label" for="website">Website</label>
+          <label class="control-label" for="website">{{"view.website" | translate}}</label>
           <input
             type="text"
             id="website"
@@ -110,17 +105,17 @@
           </div>
         </div>
         <div class="form-group">
-          <label class="control-label" for="avatar">Avatar</label>
+          <label class="control-label" for="avatar">{{"view.avatar" | translate}}</label>
           <input type="text" id="avatar" class="form-control" />
         </div>
         <div class="form-group">
-          <label class="control-label" for="about">About</label>
+          <label class="control-label" for="about">{{"view.about" | translate}}</label>
           <textarea id="about" class="form-control" rows="4">
 Eius nihil aut exercitationem veritatis. Nihil ea eveniet voluptatum voluptatem quisquam aliquid. Officiis aut alias assumenda ducimus dolores accusamus.</textarea
           >
         </div>
         <div class="form-group">
-          <label class="control-label" for="address">Address</label>
+          <label class="control-label" for="address">{{"view.address" | translate}}</label>
           <input
             type="text"
             id="address"
@@ -142,7 +137,7 @@ Eius nihil aut exercitationem veritatis. Nihil ea eveniet voluptatum voluptatem 
             [disabled]="formHtmlUpdate.invalid"
             (click)="addNewUser()"
           >
-            {{ btnText }}
+            {{ btnText | translate}}
           </button>
         </div>
       </div>

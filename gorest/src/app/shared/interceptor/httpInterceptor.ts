@@ -1,12 +1,16 @@
-import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent} from "@angular/common/http";
+import {HttpInterceptor,HttpRequest,HttpHandler,HttpEvent} from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Injectable } from "@angular/core";
 
+
 @Injectable()
 export class JwtInterceptor implements HttpInterceptor {
-  intercept(request: HttpRequest<any>,next: HttpHandler): Observable<HttpEvent<any>> {
-    // add authorization header with jwt token if available
-    let token = "gtDRPcH6V79HpXgLV8XomXKcxRxqj0AidK2T";
+
+  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    const checkLocalhost:RegExp = /^\./;
+    if (!checkLocalhost.exec(request.url)){
+ // add authorization header with jwt token if available
+    const token = "gtDRPcH6V79HpXgLV8XomXKcxRxqj0AidK2T";
 
     if (token) {
       request = request.clone({
@@ -22,5 +26,9 @@ export class JwtInterceptor implements HttpInterceptor {
       });
     }
     return next.handle(request);
+    }else {
+      return next.handle(request);
+    }
+
   }
 }

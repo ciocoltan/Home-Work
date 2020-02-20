@@ -19,7 +19,7 @@ export class UpdateComponent implements OnInit, OnDestroy {
   public h3Text: string;
   public btnText: string;
   public id: string;
-
+  public fio:string;
   public statusUser: Array<string> = ["active", "inactive"];
   public genderUser: Array<string> = ["male", "female"];
   public formError = new FormError();
@@ -81,17 +81,25 @@ export class UpdateComponent implements OnInit, OnDestroy {
             this.onValueChange();
           })
         );
+          if (this.id) {
+            this.fio = this.users.first_name + this.users.last_name;
+            this.h3Text = "Update User";
+            this.btnText = "Update User";
+          }else{
+            this.h3Text = "Add New User";
+            this.btnText = "Add User";
+          }
       })
     );
   }
   onValueChange() {
-    let form = this.formHtmlUpdate;
-    for (let item in this.formError) {
+    const form = this.formHtmlUpdate;
+    for (const item in this.formError) {
       this.formError[item] = "";
-      let control = form.get(item);
+      const control = form.get(item);
       if (!control.valid) {
-        let message = this.validationMassege[item];
-        for (let key in control.errors) {
+        const message = this.validationMassege[item];
+        for (const key in control.errors) {
           this.formError[item] += message[key];
         }
       }
@@ -102,16 +110,13 @@ export class UpdateComponent implements OnInit, OnDestroy {
       this.id = params.id;
       if (this.id) {
         this.formUpdateUser(this.id);
-        this.h3Text = `Update User:`; //${this.users.first_name} ${this.users.last_name} `;
-        this.btnText = "Update User";
+
       } else {
         this.unSubscribe.add(
           this._apiServices.getUsers().subscribe(res => {
             this.formUpdateUser(res.result[0].id);
           })
         );
-        this.h3Text = "Add New User";
-        this.btnText = "Add User";
       }
     });
   }
@@ -147,12 +152,11 @@ export class UpdateComponent implements OnInit, OnDestroy {
     if (this.controlCode._meta.code == 200) {
       alert(this.controlCode._meta.message);
       this.sentUserId(this.controlCode.result.id);
-    }else if(this.controlCode._meta.code == 422){
+    } else if (this.controlCode._meta.code == 422) {
       alert(
         ` User must have atleast 11 year, ${this.controlCode._meta.message}`
       );
-    }
-     else {
+    } else {
       alert(
         ` Please chage value on Email, this email exists to another user, ${this.controlCode._meta.message}`
       );
@@ -160,7 +164,7 @@ export class UpdateComponent implements OnInit, OnDestroy {
   }
 
   sentUserId(id: string) {
-      this.router.navigate(["home/users/view/", id]);
+    this.router.navigate(["home/users/view/", id]);
   }
 
   ngOnDestroy() {

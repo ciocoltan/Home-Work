@@ -4,7 +4,6 @@ import { UserModel } from "../shared/models/UserModel";
 import { Subscription } from "rxjs";
 import { UsersObjResModel } from "../shared/models/UsersObjResModel";
 
-
 @Component({
   selector: "app-users",
   templateUrl: "./users.component.html",
@@ -59,7 +58,7 @@ export class UsersComponent implements OnInit, OnDestroy {
       this.unSubscribe.add(
         this._apiServices.deleteUser(id).subscribe(res => {
           this.controlCode = res;
-          if (this.controlCode._meta.code == 204) {
+          if (this.controlCode._meta.code === 204) {
             alert(this.controlCode._meta.message);
             this.showUsers(this.pageOfItems[0].name);
           } else {
